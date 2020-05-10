@@ -25,6 +25,7 @@ jobs:
         python-version: ${{ matrix.python }}
 
     - uses: j0yu/setup-rez@v1
+    - run: rez pip -i requests
 
     - name: Checkout ${{ github.repository }}
       uses: actions/checkout@v2
