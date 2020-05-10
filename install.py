@@ -9,8 +9,8 @@ import zipfile
 import requests
 
 ARCH_NAME = {
-    "x68_64": "64",
-    "x68": "32",
+    "x86_64": "64",
+    "x86": "32",
 }
 
 PLATFORM_ARTIFACT = {
