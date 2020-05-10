@@ -9,6 +9,14 @@ jobs:
     strategy:
       matrix:
         python: [2.7, 3.7]
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        includes:
+        - os: ubuntu-latest
+          index: 0
+        - os: macos-latest
+          index: 1
+        - os: windows-latest
+          index: 2
 
     steps:
     - name: Set up Python ${{ matrix.python-version }}
@@ -21,6 +29,6 @@ jobs:
     - name: Checkout ${{ github.repository }}
       uses: actions/checkout@v2
 
-    - run: rez build --install --variant 0
-    
+    - run: rez build --install --variant ${{ matrix.index }}
+
     - run: rez env neovim -- which neovim
