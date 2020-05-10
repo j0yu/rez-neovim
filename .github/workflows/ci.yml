@@ -4,8 +4,8 @@ on: push
 
 jobs:
   install:
-    name: Install as rez package (py${{ matrix.python }})
-    runs-on: ubuntu-latest
+    name: Install as rez package (${{ matrix.os }} py${{ matrix.python }})
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         python: [2.7, 3.7]
@@ -16,7 +16,7 @@ jobs:
         - os: macos-latest
           index: 1
         - os: windows-latest
-          index: 2
+          index: 3  # for 64-bit Windows
 
     steps:
     - name: Set up Python ${{ matrix.python-version }}

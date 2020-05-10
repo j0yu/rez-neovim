@@ -38,8 +38,10 @@ def download_url():
         str: Full URL to the artifact to download.
     """
     version = os.environ["REZ_BUILD_PROJECT_VERSION"].split("+")[0]
+    arch = ARCH_NAME[os.getenv("REZ_ARCH_VERSION")]
+
     platform_artifact = PLATFORM_ARTIFACT[os.environ["REZ_PLATFORM_VERSION"]]
-    platform_artifact.format(arch=ARCH_NAME[os.getenv("REZ_ARCH_VERSION")])
+    platform_artifact = platform_artifact.format(**locals())
     return VERSION_URL.format(**locals())
 
 
