@@ -42,4 +42,6 @@ build_command = [os.sys.executable, os.path.join(__dir__, "install.py")]
 
 def commands():
     """Commands to set up environment for ``rez env neovim``"""
-    env.PATH.append("{root}")
+    import os
+    env.PATH.append(os.path.join("{root}", "bin"))
+    # env.XDG_DATA_DIRS.append(os.path.join("{root}", "share"))
