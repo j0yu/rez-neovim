@@ -13,10 +13,13 @@ jobs:
         include:
         - os: ubuntu-latest
           index: 0
+          which: which nvim
         - os: macos-latest
           index: 1
+          which: which nvim
         - os: windows-latest
           index: 3  # for 64-bit Windows
+          which: where.exe nvim-qt.exe
 
     steps:
     - name: Set up Python ${{ matrix.python-version }}
@@ -32,4 +35,4 @@ jobs:
 
     - run: rez build --install --variants ${{ matrix.index }}
 
-    - run: rez env neovim -- which neovim
+    - run: rez env neovim -- ${{ matrix.which }}
