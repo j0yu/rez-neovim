@@ -15,7 +15,7 @@ ARCH_NAME = {
 
 PLATFORM_ARTIFACT = {
     "linux": "nvim-linux{arch}.tar.gz",
-    "macos": "nvim-macos.tar.gz",
+    "osx": "nvim-macos.tar.gz",
     "windows": "nvim-win{arch}.zip",
 }
 
