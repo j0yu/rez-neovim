@@ -18,7 +18,7 @@ authors = ["Joseph Yu"]
 
 variants = [
     ["platform-linux", "arch-x86_64"],
-    ["platform-macos", "arch-x86_64"],
+    ["platform-osx", "arch-x86_64"],
     ["platform-windows", "arch-x86"],
     ["platform-windows", "arch-x86_64"],
 ]
