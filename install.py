@@ -26,8 +26,8 @@ VERSION_URL = (
 
 EXTRACT_DIR = os.environ[
     "REZ_BUILD_INSTALL_PATH"
-    if os.environ["REZ_BUILD_INSTALL"] == "1" else
-    "REZ_BUILD_PATH"
+    if os.environ["REZ_BUILD_INSTALL"] == "1"
+    else "REZ_BUILD_PATH"
 ]
 
 
@@ -87,8 +87,7 @@ def install_nix(artifact_url):
 
     with tarfile.open(fileobj=response.raw, mode="r|gz") as artifact_tar:
         artifact_tar.extractall(
-            path=EXTRACT_DIR,
-            members=iter_stripped(artifact_tar),
+            path=EXTRACT_DIR, members=iter_stripped(artifact_tar),
         )
 
 
@@ -105,8 +104,7 @@ def install_windows(artifact_url):
 
     with zipfile.ZipFile(zip_io) as artifact_zip:
         artifact_zip.extractall(
-            path=EXTRACT_DIR,
-            members=iter_stripped(artifact_zip.infolist()),
+            path=EXTRACT_DIR, members=iter_stripped(artifact_zip.infolist()),
         )
 
 

@@ -15,44 +15,13 @@ Here are some beginners instructions on how to use this repository.
 1. Ensure at least the folder printed by
    this command `rez config local_packages_path`
 1. Open terminal in (extracted) repository folder,
-   run `rez build --install`
+   run `rez build --install --variant INDEX_FROM_PACKAGE_PY`
 
 Neovim should now be installed as a [rez] package named `neovim`.
 
 ## Usage
 
-To run [Neovim]: `rez env neovim -- neovim`
-
-
-## Extra Topics
-
-### Skip downloading installer
-
-If you already have the **raw** Neovim tar/zip downloaded from the Foundry's
-website, place it inside the (extracted) repository folder without renaming it.
-
-Then `rez build --install` should skip re-downloading the Neovim tar/zip.
-
-### Licensing
-
-If you already have a license server setup, e.g. at the port and address 
-`1234@licenseserver`, you can run Neovim like:
-
-```bash
-rez env neovim -- foundry_LICENSE=1234@licenseserver neovim
-```
-
-There are many ways to go about setting up licenses for rez packages e.g.
-
-1. Modify this rez package build to include your own custom `neovim`
-   launcher script which sets up your licenses
-1. Have a separate `licenses` rez package to handle licenses used by your 
-   studio. 
-   
-   This can then be added as a [requirement] e.g. `requires = ["licenses"]`
-
-Which method you go by will depend on your current situation.
-
+To run [Neovim]: `rez env neovim -- nvim`
 
 ## Maintenance
 
@@ -73,5 +42,5 @@ Want more rez packages? Checkout [my GitHub repositories][j0yu-rez-packages]
 [rez]: https://github.com/nerdvegas/rez
 [requirement]: https://github.com/nerdvegas/rez/wiki/Package-Definition-Guide#requires
 [j0yu-rez-packages]: https://github.com/j0yu?tab=repositories&q=topic%3Arez+topic%3Apackage
-[Neovim]: https://www.foundry.com/products/neovim
+[Neovim]: https://github.com/neovim/neovim
 [PEP 540 local version segments]: https://www.python.org/dev/peps/pep-0440/#local-version-segments
