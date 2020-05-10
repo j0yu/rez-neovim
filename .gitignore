@@ -1,0 +1,11 @@
+/build/
+*.py[co]
+
+# Neovim Linux/Windows installer files
+Neovim*.tar.gz
+Neovim*.zip
+
+
+# IDEs
+/.vscode
+/.idea
