@@ -10,7 +10,7 @@ jobs:
       matrix:
         python: [2.7, 3.7]
         os: [ubuntu-latest, macos-latest, windows-latest]
-        includes:
+        include:
         - os: ubuntu-latest
           index: 0
         - os: macos-latest
@@ -29,6 +29,6 @@ jobs:
     - name: Checkout ${{ github.repository }}
       uses: actions/checkout@v2
 
-    - run: rez build --install --variant ${{ matrix.index }}
+    - run: rez build --install --variants ${{ matrix.index }}
 
     - run: rez env neovim -- which neovim
