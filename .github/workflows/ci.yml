@@ -29,7 +29,8 @@ jobs:
 
     - uses: j0yu/setup-rez@v1
       with:
-        ref: 2.58.0
+        source: wwfxuk/rez
+        ref: 2.58.0+wwfx.1.0.1
 
     - run: rez pip -i requests
 
